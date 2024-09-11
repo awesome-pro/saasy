@@ -1,37 +1,29 @@
 import Link from 'next/link'
 import React from 'react'
+import { Button } from './ui/button'
+import { Input } from './ui/input'
 
 function Contact() {
   return (
     <section
-            className="flex w-full flex-col place-content-center place-items-center gap-[10%] p-[5%] px-[10%] max-md:px-2"
+            className='relative flex w-full items-start justify-between bg-primary/10 text-white overflow-hidden p-10 rounded-lg '
         >
-            <div
-                className="flex w-full max-w-[80%] place-content-center place-items-center justify-between gap-3 rounded-lg border-[1px] border-outlineColor bg-secondary p-6 max-md:max-w-full max-md:flex-col"
-            >
-                <div className="flex flex-col gap-1">
-                    <h2 className="text-3xl text-gray-300 max-md:text-xl">
-                        Join our newsletter
-                    </h2>
-                    <div className="text-gray-300">Lorem ipsum dolor sit.</div>
-                </div>
+         <div>
+            <h3 className='text-3xl font-semibold'>
+                Join Our Newsletter
+            </h3>
+            <h6 className=''>
+                Get the latest news and updates on our products and services
+            </h6>
+        </div> 
 
-                <div
-                    className="flex h-[60px] place-items-center gap-2 overflow-hidden p-2"
-                >
-                    <input
-                        type="email"
-                        className="input h-full w-full !border-gray-600 p-2 outline-none"
-                        placeholder="email"
-                    />
-                    <Link
-                        className="btn !rounded-full !border-[1px] !border-solid !border-gray-300 !bg-transparent transition-colors duration-[0.3s]"
-                        href=""
-                    >
-                        Signup
-                    </Link>
-                </div>
-            </div>
+        <div className='flex flex-row gap-0 items-center justify-center'>
+            <Input
+             className='w-full p-2 rounded-lg bg-primary/50 text-white border-none focus:ring-2 focus:ring-primary focus:outline-none rounded-r-none'
+            />
+            <Button className=' rounded-l-none'>Subscribe</Button>
+
+        </div>
         </section>
   )
 }

@@ -95,4 +95,8 @@ body {
   .heading {
     @apply text-4xl font-semibold bg-gradient-to-tr from-slate-500 via-slate-300 to-slate-200 bg-clip-text text-transparent;
   }
+  .card-shining-border {
+    @apply relative p-4 border-r-4 border-b-0 border-t-4;
+  }
+
 }

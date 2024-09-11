@@ -18,9 +18,9 @@ function Hero() {
             <div
                 className="reveal-up gradient-text text-center text-6xl font-semibold uppercase leading-[80px] max-lg:text-4xl max-md:leading-snug mb-12"
             >
-                <span className="heading !text-5xl"> Ship Faster </span>
+                <span className="heading !text-6xl"> Ship Faster </span>
                 <br />
-                <span className="heading !text-5xl"> with SaaS templates </span>
+                <span className="heading !text-6xl"> with SaaS templates </span>
             </div>
 
             <div
@@ -48,9 +48,9 @@ function Hero() {
                 <Image
                     src="/images/home/dashboard.png"
                     alt="dashboard"
-                    className="h-full w-full object-cover opacity-90 max-lg:object-contain"
-                    width={800}
-                    height={500}
+                    className="object-cover opacity-90 "
+                    width={1500}
+                    height={800}
                 />
             </div>
 

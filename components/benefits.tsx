@@ -1,4 +1,6 @@
 import React from 'react'
+import { Card, CardContent, CardFooter, CardHeader } from './ui/card'
+import { ChevronDown, Clock10Icon, Phone, RocketIcon } from 'lucide-react'
 
 function Benefits() {
   return (
@@ -12,92 +14,17 @@ function Benefits() {
             className="reveal-up mt-5 flex flex-col gap-3 text-center"
         >
             <h2
-                className="heading"
+                className="heading mb-10"
             >
                 Key benefits
             </h2>
         </div>
         <div
-            className="mt-6 flex max-w-[80%] flex-wrap place-content-center gap-8 max-lg:flex-col"
+            className="grid md:grid-cols-2 gap-x-10 gap-y-12 "
         >
-            <div
-                className="reveal-up flex h-[400px] w-[450px] flex-col gap-3 text-center max-md:w-[320px]"
-            >
-                <div
-                    className="border-gradient h-[200px] w-full overflow-hidden max-md:h-[150px]"
-                >
-                    <div
-                        className="flex h-full w-full place-content-center place-items-end p-2"
-                    >
-                        <i
-                            className="bi bi-rocket-takeoff-fill text-7xl text-gray-200 max-md:text-5xl"
-                        ></i>
-                    </div>
-                </div>
-                <div className="flex flex-col gap-4 p-2">
-                    <h3
-                        className="mt-8 text-2xl font-normal max-md:text-xl"
-                    >
-                        Minimize hours spent
-                    </h3>
-                    <div className="text-gray-300">
-                        Lorem ipsum dolor sit amet consectetur,
-                        adipisicing elit.
-                    </div>
-                </div>
-            </div>
-            <div
-                className="reveal-up flex h-[400px] w-[450px] flex-col gap-3 text-center max-md:w-[320px]"
-            >
-                <div
-                    className="border-gradient h-[200px] w-full overflow-hidden max-md:text-[150px]"
-                >
-                    <div
-                        className="flex h-full w-full place-content-center place-items-end p-2"
-                    >
-                        <i
-                            className="bi bi-layout-sidebar-inset text-7xl text-gray-200 max-md:text-5xl"
-                        ></i>
-                    </div>
-                </div>
-                <div className="flex flex-col gap-4 p-2">
-                    <h3
-                        className="mt-8 text-2xl font-normal max-md:text-xl"
-                    >
-                        Simple to use
-                    </h3>
-                    <div className="text-gray-300">
-                        Lorem ipsum dolor sit amet consectetur,
-                        adipisicing elit.
-                    </div>
-                </div>
-            </div>
-            <div
-                className="reveal-up flex h-[400px] w-[450px] flex-col gap-3 text-center max-md:w-[320px]"
-            >
-                <div
-                    className="border-gradient h-[200px] w-full overflow-hidden max-md:h-[150px]"
-                >
-                    <div
-                        className="flex h-full w-full place-content-center place-items-end p-2"
-                    >
-                        <i
-                            className="bi bi-lightning-charge-fill text-7xl text-gray-200 max-md:text-5xl"
-                        ></i>
-                    </div>
-                </div>
-                <div className="flex flex-col gap-4 p-2">
-                    <h3
-                        className="mt-8 text-2xl font-normal max-md:text-xl"
-                    >
-                        Speed up your development
-                    </h3>
-                    <div className="text-gray-300">
-                        Lorem ipsum dolor sit amet consectetur,
-                        adipisicing elit.
-                    </div>
-                </div>
-            </div>
+            {benefits.map((benefit, index) => (
+                <BenenfitCard key={index} {...benefit} />
+            ))}
         </div>
     </div>
 </section>
@@ -105,3 +32,45 @@ function Benefits() {
 }
 
 export default Benefits
+
+
+function BenenfitCard(
+    {icon, title, description}: {icon: React.ReactNode, title: string, description: string}
+) {
+  return (
+    <Card className="relative bg-black/90 text-slate-100 overflow-hidden card-shining-border text-center flex flex-col items-center">
+        <CardHeader>{icon}</CardHeader>
+        <CardContent>
+            <h3 className='heading !text-2xl'>{title}</h3>
+        </CardContent>
+        <CardFooter>
+            <p>{description}</p>
+        </CardFooter>
+    </Card>
+
+  )
+}
+
+
+const benefits = [
+    {
+        icon: <Clock10Icon size={64} className="text-7xl text-gray-200 max-md:text-5xl" />,
+        title: "Minimize hours spent",
+        description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit."
+    },
+    {
+        icon: <Phone size={64} className="text-7xl text-gray-200 max-md:text-5xl" />,
+        title: "Simple to use",
+        description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit."
+    },
+    {
+        icon: <RocketIcon size={64} className="text-7xl text-gray-200 max-md:text-5xl" />,
+        title: "Speed up your development",
+        description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit."
+    },
+    {
+        icon: <ChevronDown size={64} className="text-7xl text-gray-200 max-md:text-5xl rotate-180" />,
+        title: "Increase user satisfaction",
+        description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit."
+    }
+]

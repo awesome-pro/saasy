@@ -10,7 +10,7 @@ import {
 function FAQ() {
   return (
     <section className='flex flex-col items-center'>
-      <h1 className='heading mb-1'>
+      <h1 className='heading mb-5'>
         Frequently Asked Questions
       </h1>
         <Accordion type="single" collapsible className="w-full lg:min-w-[600px]">
